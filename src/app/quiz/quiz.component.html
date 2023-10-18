@@ -1,0 +1,15 @@
+<section>
+  <h2 class="quiz_title">
+    C'est parti {{ playerName }}, soit prêt pour le quiz : identifiant de catégorie {{ categorieId }}
+  </h2>
+  <section class="quiz_reset" *ngIf="isQuizFinished">
+    <h3>Tu peux voir tes réponses</h3>
+    <button class="btn--outline">Resheep</button>
+  </section>
+  <section class="quiz_questions-list">
+    <app-question [categorieId]="categorieId"></app-question>
+  </section>
+  <div class="quiz_validation">
+    <button (click)="goToResultPage()" class="btn">Show sheep</button>
+  </div>
+</section>

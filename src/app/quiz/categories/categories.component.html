@@ -1,0 +1,20 @@
+<h1>Choisis ton mouton.. ta catégorie !</h1>
+
+<div id="search_container">
+  <form class="search" (ngSubmit)="loadCategories()">
+    <input
+      type="text"
+      placeholder="Sheep"
+      [(ngModel)]="search"
+      name="searchbar"
+    />
+    <button type="submit">Sheep</button>
+    <button (click)="resetSearch()" type="button">Resheep</button>
+  </form>
+</div>
+
+<section *ngFor="let content of categories">
+  <div class="category" (click)="navigateToCategory(content.id)">
+    <h2>{{ content.categoryLabel }}</h2>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+.answer {
+  &_container {
+    @apply grid grid-cols-2 gap-x-6 gap-y-3 px-8;
+
+    button {
+      @apply border border-blue-500 px-4 py-2 rounded shadow hover:bg-blue-800 hover:text-white max-w-md;
+
+      &:hover {
+        span {
+          @apply text-blue-200;
+        }
+      }
+      span {
+        @apply text-blue-500;
+      }
+    }
+
+    &--selected {
+      @apply bg-blue-800 text-white;
+
+      span {
+        @apply text-blue-200 #{!important};
+      }
+    }
+  }
+}

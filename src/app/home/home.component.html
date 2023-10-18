@@ -1,0 +1,44 @@
+<section class="home">
+  <h2 class="home_title">Bienvenue sur ce mouton.. euh quiz pardon</h2>
+  <p class="home_presentation">
+    Rendu du contrôle Angular du groupe : RABIAI, FLORIS, ROCHE
+  </p>
+  <p class="home_presentation">Groupe de promotion : M2 DMFS G1</p>
+  <form
+    action=""
+    class="home_form"
+    *ngIf="!playerName.length || !isPlayerNameConfirmed"
+  >
+    <label for="name">Pseudo</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Entrez un pseudo"
+      [(ngModel)]="playerName"
+      required
+    />
+    <button class="btn--icon" (click)="confirmPseudo()">🐑</button>
+  </form>
+  <button
+    class="home_quiz-btn btn--outline"
+    (click)="navigateToQuiz()"
+    [disabled]="isPlayerNameFill"
+  >
+    Démarrer
+  </button>
+  <img
+    src="https://www.comptoir-irlandais.com/14473/peluche-shaun-le-mouton-29cm.jpg"
+    alt="Description of Image"
+    class="home_image"
+    style="width: 100px"
+  />
+  <a href="https://www.mouton.fr" target="_blank">
+    <img
+      src="/assets/mouton.png"
+      alt="Description of Image"
+      class="home_image"
+      style="border-radius: 50%; box-shadow: 10px -10px 5px #ccc"
+    />
+  </a>
+</section>
